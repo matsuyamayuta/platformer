@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     [SerializeField] float speed = 7.0f; //speedの変数宣言
-    private float jumpPower = 300;
+    private float jumpPower = 600;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
         {
             rb.AddForce(transform.up * jumpPower);
         }
