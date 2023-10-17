@@ -24,7 +24,7 @@ public class ManageCircle : MonoBehaviour
     {
         for(int i = 0; i < n; i++)
         {
-            Instantiate(circleObj, new Vector3(x+(i*2)-10, y+2, 0), Quaternion.identity, parentCircleGameObject.transform);
+            Instantiate(circleObj, new Vector3(x+(i*1.2f), y, 0), Quaternion.identity, parentCircleGameObject.transform);
         }
     }
 }
