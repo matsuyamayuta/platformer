@@ -7,6 +7,7 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] float speed = 7.0f; //speedの変数宣言
     private float jumpPower = 600;
     private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +26,10 @@ public class MovePlayer : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+    }
+
+    public void GameReset()
+    {
+
     }
 }
