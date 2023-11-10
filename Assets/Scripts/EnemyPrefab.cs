@@ -27,10 +27,20 @@ public class EnemyPrefab : MonoBehaviour
     {
         if (collision.gameObject.name == "Capsule")
         {
-            Debug.Log("GameOvar");
-            UnityEditor.EditorApplication.isPlaying = false;   // UnityEditorの実行を停止する処理
-            Application.Quit();                                // ゲームを終了する処理
-            //Destroy(gameObject);
+            GameObject player = collision.gameObject;
+            if (player.transform.position.y > gameObject.transform.position.y + 0.5f)
+            {
+                int jumpPower = 300;
+                player.GetComponent<MovePlayer>().PlayerJump(jumpPower);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("GameOvar");
+                UnityEditor.EditorApplication.isPlaying = false;   // UnityEditorの実行を停止する処理
+                Application.Quit();                                // ゲームを終了する処理}
+
+            }
         }
     }
 }

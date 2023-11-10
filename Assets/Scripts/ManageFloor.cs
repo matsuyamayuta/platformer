@@ -32,7 +32,9 @@ public class ManageFloor : MonoBehaviour
         {
             if (player.transform.position.x > spawnpoint - 30)
             {
-                int n = Random.Range(0, 7); // ポイント生成数
+                int n = Random.Range(0,8); // ポイント生成数
+                if(n != 0 && n <= 4) n = 5;
+                
                 int e = Random.Range(5, 7); // 敵生成数 
                 float  floorY = Random.Range(-5, -2); // 床の高さ
                 Instantiate(floorObj, new Vector3(spawnpoint + 10, floorY, 0), Quaternion.identity, parentFloorGameObject.transform);

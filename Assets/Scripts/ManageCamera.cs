@@ -34,12 +34,12 @@ public class ManageCamera : MonoBehaviour
             cameraPos.y = 0;  // カメラの縦位置に0を入れる
         }
 
-        // もし対象の縦位置が0より大きい場合
-        if (target.transform.position.y > 0)
-        {
-            cameraPos.y = target.transform.position.y;   // カメラの縦位置に対象の位置を入れる
-        }
-
+        //// もし対象の縦位置が0より大きい場合
+        //if (target.transform.position.y > 0)
+        //{
+        //    cameraPos.y = target.transform.position.y;   // カメラの縦位置に対象の位置を入れる
+        //}
+        cameraPos.y = 0;
         cameraPos.z = -10; // カメラの奥行きの位置に-10を入れる
 
         Camera.main.gameObject.transform.position = cameraPos; //　カメラの位置に変数cameraPosの位置を入れる
